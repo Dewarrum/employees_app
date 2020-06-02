@@ -7,10 +7,10 @@ define('DB_PASSWORD', '12345678');
 define('DB_NAME', 'employees_app');
  
 /* Attempt to connect to MySQL database */
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
  
 // Check connection
-if($mysqli === false){
-    die("ERROR: Could not connect. " . $mysqli->connect_error);
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 ?>
